@@ -41,6 +41,7 @@ INDENT-FLAG."
   (apheleia-formatters-indent
    tab-flag indent-flag
    (cl-case major-mode
+     (cperl-mode 'cperl-indent-level)
      (css-mode 'css-indent-offset)
      (graphql-mode 'graphql-indent-level)
      (html-mode 'sgml-basic-offset)
