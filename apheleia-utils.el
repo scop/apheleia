@@ -41,6 +41,9 @@ INDENT-FLAG."
   (apheleia-formatters-indent
    tab-flag indent-flag
    (cl-case major-mode
+     (css-mode 'css-indent-offset)
+     (graphql-mode 'graphql-indent-level)
+     (html-mode 'sgml-basic-offset)
      (json-mode 'js-indent-level)
      (json-ts-mode 'json-ts-mode-indent-offset)
      (js-mode 'js-indent-level)
@@ -49,9 +52,12 @@ INDENT-FLAG."
      (js2-mode 'js2-basic-offset)
      (js2-jsx-mode 'js2-basic-offset)
      (js3-mode 'js3-indent-level)
+     (ruby-mode 'ruby-indent-level)
+     (svelte-mode 'svelte-basic-offset)
      (tsx-ts-mode 'typescript-ts-mode-indent-offset)
      (typescript-mode 'typescript-indent-level)
-     (typescript-ts-mode 'typescript-ts-mode-indent-offset))))
+     (typescript-ts-mode 'typescript-ts-mode-indent-offset)
+     (yaml-mode 'yaml-indent-offset))))
 
 (defcustom apheleia-formatters-respect-fill-column nil
   "Whether formatters should set `fill-column' related flags."
